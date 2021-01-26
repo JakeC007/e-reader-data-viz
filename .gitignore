@@ -125,5 +125,7 @@ dmypy.json
 .pyre/
 
 # keep my data private
-.csv
-.json
+*.csv
+*.json
+.RData
+.Rhistory

@@ -22,14 +22,13 @@ def main():
   print(f"I have written {len(dataDict)} entries the csv file which represents {len(uniqueTitles)} books")
   
   #the datetime obj is an ISO Standard in UTC
-  #lets get EST
+  #let's get EST
   EST = tz.gettz('EST')
  
   #UTC can be converted to any format via strftime, though f strings just need a ":"
   #see https://strftime.org/ for formatting
   print(f"The earliest book was at {dataDict[0]['time'].replace(tzinfo=EST):%x %-I:%M %p}")
   print(f"The most recent book was at {dataDict[-1]['time'].replace(tzinfo=EST):%x %-I:%M %p}")
-
 
 def parseData(data):
   """
@@ -39,6 +38,7 @@ def parseData(data):
     retLst - list of dicts. Each dict is the relevent json bits
     uniqueTitles -  list of unique titles
   """
+  
   #set up accums
   retLst = []
   uniqueTitles = set()
@@ -64,6 +64,7 @@ def writeCSV(data):
   Writes the extracted json data to a CSV file
   @param: data - list of dicts. each dict has book data
   """
+  
   #set up for csv writing
   csvFile = open('kindle_data.csv', 'w')
   csvWriter = csv.writer(csvFile) 
@@ -77,6 +78,5 @@ def writeCSV(data):
     csvWriter.writerow([d['time'], d['title'], d['pos'], d['asin'], d['evntType']])
     
   csvFile.close()
-
 
 main()

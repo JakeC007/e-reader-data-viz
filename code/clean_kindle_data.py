@@ -3,6 +3,7 @@ Jan 25, 2020
 Jake Chanenson
 Quick script to clean the kindle data so that JSON parsers can parse.
 """
+
 def main():
   fileName = input("Please enter the full file name of the kindle data without the extension: ")
   #fileName = 'jan2021_kindle_data'
@@ -10,7 +11,7 @@ def main():
   writeCleanedData(fileName, data)
   
   numLines = sum(1 for line in open(fileName+'_CLEANED.json'))
-  print(f"Your data is cleaned! The file is titled {fileName}_CLEANED.json\nThere were {numLines-2} entries in your file.")
+  print(f"Your data is cleaned! The file is titled {fileName}_CLEANED.json\nThere are {numLines-2} entries in your file.")
   
 def readKindleData(fileName):
   """
@@ -18,6 +19,7 @@ def readKindleData(fileName):
   @param: fileName - takes the file name before the extension
   @returns: data - cleaned json data
   """
+  
   with open(fileName+'.json', "r") as f:
     foo = []
     for line in f:
@@ -34,6 +36,7 @@ def writeCleanedData(fileName, data):
       data - cleaned data
   @returns: None
   """
+  
   with open (fileName+'_CLEANED.json', "w") as nf:
     nf.write('[\n')
     nf.write(data)
