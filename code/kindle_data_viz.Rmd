@@ -14,13 +14,16 @@ library("ggplot2")
 
 ## Import file 
 ```{r import_stuff}
-jan2021_kindle_data <- read_csv("jan2021_kindle_data.csv")
+#import data
+jan2021_kindle_data <- read_csv("~/e-reader-data-viz/data/jan2021_kindle_data.csv")
+
+#view data
 head(jan2021_kindle_data)
 names(jan2021_kindle_data)
 
 ```
 
 Now I am going to do some neat viz stuff with the data I guess...
-```{r play}
-summarize(jan2021_kindle_data)
+```{r viz-time}
+
 ```
