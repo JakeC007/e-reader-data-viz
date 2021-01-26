@@ -123,3 +123,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# keep my data private
+.csv
+.json
