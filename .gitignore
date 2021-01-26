@@ -129,6 +129,5 @@ dmypy.json
 *.json
 .RData
 .Rhistory
-*.Rmd
-*.csv
-*.json
+
+
