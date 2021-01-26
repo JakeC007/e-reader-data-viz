@@ -1,0 +1,26 @@
+---
+title: "Kindle_Data_Viz"
+author: "Jake Chanenson"
+date: "1/25/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("readr")
+library("tidyverse")
+library("ggplot2")
+```
+
+## Import file 
+```{r import_stuff}
+jan2021_kindle_data <- read_csv("jan2021_kindle_data.csv")
+head(jan2021_kindle_data)
+names(jan2021_kindle_data)
+
+```
+
+Now I am going to do some neat viz stuff with the data I guess...
+```{r play}
+summarize(jan2021_kindle_data)
+```
